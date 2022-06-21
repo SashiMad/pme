@@ -2,6 +2,7 @@ import React from "react";
 import "./UserIcon.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import { faSquarePen } from "@fortawesome/free-solid-svg-icons";
 
 export default function UserIcon() {
   return (
@@ -9,6 +10,10 @@ export default function UserIcon() {
       <FontAwesomeIcon
         icon={faCircleUser}
         className="user-icon"
+      ></FontAwesomeIcon>
+      <FontAwesomeIcon
+        icon={faSquarePen}
+        className="pen-icon"
       ></FontAwesomeIcon>
       <h3>devel oper</h3>
     </div>
