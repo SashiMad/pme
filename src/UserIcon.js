@@ -7,7 +7,8 @@ const userIcon = new URL("./images/UserIcon1.png", import.meta.url);
 export default function UserIcon() {
   return (
     <div>
-      <img src={userIcon} alt="userIcon" />
+      <img src={userIcon} alt="userIcon" className="user-icon" />
+      <h3>devel oper</h3>
     </div>
   );
 }
