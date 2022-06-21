@@ -7,6 +7,9 @@ function App() {
       <header className="App-header">
         <h1>
           <img src={logo} className="App-logo" alt="logo" />
+          <button type="button" class="btn btn-primary">
+            Primary
+          </button>
         </h1>
       </header>
     </div>
