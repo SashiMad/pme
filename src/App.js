@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import Header from "./images/Header.png";
 import "./App.css";
 
 function App() {
@@ -6,10 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>
-          <img src={logo} className="App-logo" alt="logo" />
-          <button type="button" class="btn btn-primary">
-            Primary
-          </button>
+          <img src={Header} alt="logo" />
         </h1>
       </header>
     </div>
