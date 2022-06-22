@@ -1,5 +1,5 @@
 import React from "react";
-import EmailButton from "./EmailButton";
+import EmailButtonPopup from "./EmailButtonPopup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleXmark,
@@ -76,7 +76,7 @@ export default function DropdownMenu() {
                 <p>Deine aktuelle E-Mail-Adresse:</p>{" "}
                 <strong>devet@familienservice.de</strong>
               </div>
-              <EmailButton />
+              <EmailButtonPopup />
             </div>
           </div>
         </div>
