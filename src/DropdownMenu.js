@@ -1,53 +1,163 @@
-import React from "react";
-import Button from "react-bootstrap/Button";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function DropdownMenu() {
   return (
-    <div className="dropdown">
-      <Button
-        className="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-bs-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <FontAwesomeIcon
-          icon={faEnvelope}
-          className="envelope-icon"
-        ></FontAwesomeIcon>
-        E-Mail-Benachrichtigungen verwalten
-      </Button>
-      <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a className="dropdown-item" href="/">
-          Action
-        </a>
-      </div>
-      <div class="dropdown show">
-        <a
-          class="btn btn-secondary dropdown-toggle"
-          href="#"
-          role="button"
-          id="dropdownMenuLink"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Accordion Item #1
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-mdb-parent="#accordionExample"
         >
-          Dropdown link
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">
-            Action
-          </a>
-          <a class="dropdown-item" href="#">
-            Another action
-          </a>
-          <a class="dropdown-item" href="#">
-            Something else here
-          </a>
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <strong>.accordion-body</strong>,
+            though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Accordion Item #2
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-mdb-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <strong>.accordion-body</strong>,
+            though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Accordion Item #3
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-mdb-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <strong>.accordion-body</strong>,
+            though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Accordion Item #4
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-mdb-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <strong>.accordion-body</strong>,
+            though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Accordion Item #5
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-mdb-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It's also worth noting that just
+            about any HTML can go within the <strong>.accordion-body</strong>,
+            though the transition does limit overflow.
+          </div>
         </div>
       </div>
     </div>
