@@ -63,14 +63,21 @@ export default function DropdownMenu() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <div>
+                {" "}
+                <p>
+                  Du hast eine neue E-Mail-Adresse? Hier kannst du jederzeit
+                  deine E-Mail-Adresse ändern.
+                </p>{" "}
+              </div>
+              <div>
+                {" "}
+                <p>Deine aktuelle E-Mail-Adresse:</p>{" "}
+                <strong>devet@familienservice.de</strong>
+              </div>
+              <button type="button" class="btn btn-primary btn-lg">
+                <strong>E-MAIL-ADRESSE ÄNDERN</strong>
+              </button>
             </div>
           </div>
         </div>
@@ -142,7 +149,7 @@ export default function DropdownMenu() {
               <FontAwesomeIcon
                 icon={faCircleXmark}
                 className="xmark-icon"
-              ></FontAwesomeIcon>
+              ></FontAwesomeIcon>{" "}
               Benutzerkonto löschen
             </button>
           </h2>
