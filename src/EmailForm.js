@@ -2,7 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function EmailForm() {
-  const { handleSubmit, register } = useForm();
+  const {
+    handleSubmit,
+    formState: { errors },
+    register,
+  } = useForm();
+
+  console.log("errors", errors);
 
   const onSubmit = (data) => console.log(data);
 
@@ -12,7 +18,13 @@ export default function EmailForm() {
         <div className="form-group">
           <label for="exampleInputEmail1"></label>
           <input
-            {...register("email")}
+            {...register("email", {
+              required: "Bitte neue E-Mail-Adresse eingeben.",
+              pattern: {
+                value: /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/,
+                message: "Bitte eine valide E-Mail-Adresse eingeben.",
+              },
+            })}
             type="email"
             className="form-control"
             id="exampleInputEmail1"
@@ -23,7 +35,13 @@ export default function EmailForm() {
         <div className="form-group">
           <label for="exampleInputPassword1"></label>
           <input
-            {...register("email")}
+            {...register("email", {
+              required: "Bitte neue E-Mail-Adresse wiederholen.",
+              pattern: {
+                value: /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/,
+                message: "Bitte eine valide E-Mail-Adresse eingeben.",
+              },
+            })}
             type="email"
             className="form-control"
             id="exampleInputEmail"
