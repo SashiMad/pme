@@ -1,23 +1,19 @@
 import React from "react";
-import PasswordForm from "./PasswordForm";
+import EmailForm from "./EmailForm";
 
 export default function PopupContent() {
   return (
     <div>
-      <div class="card">
-        <div class="card-header">Featured</div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-          <PasswordForm />
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
+      <h2>E-Mail-Adresse ändern</h2>
+      <hr />
+      <p class="card-text">
+        Bitte gib deine neue E-Mail-Adresse zweimal an. Deine alte
+        E-Mail-Adresse wird damit für das Portal ungültig. Bei Angeboten oder
+        Fragen werden wir dich künftig über die neue E-Mail-Adresse
+        kontaktieren. Um wieder alle Funktionen des Portals nutzen zu können,
+        musst du deine neue E-Mail-Adresse bestätigen.
+      </p>
+      <EmailForm />
     </div>
   );
 }
