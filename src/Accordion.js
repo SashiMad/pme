@@ -11,10 +11,10 @@ import {
   faTableList,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function AccordionTry() {
+export default function AccordionDropdown() {
   return (
     <div>
-      <Accordion>
+      <Accordion flush>
         <Accordion.Item eventKey="0">
           <Accordion.Header>
             <FontAwesomeIcon
