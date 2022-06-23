@@ -1,36 +1,31 @@
-import React, { useState, useRef } from "react";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Input,
-} from "reactstrap";
-import PopupContent from "./PopupContent";
+import React, { useState } from "react";
+import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
+import EmailForm from "./EmailForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function EmailButtonPopup() {
-  const inputRef = useRef(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const toggle = () => setModalIsOpen(!modalIsOpen);
-  const handleOpen = () => inputRef.current.focus();
 
   return (
     <div className="EmailButtonPopup">
       <div>
         <Button onClick={() => setModalIsOpen(true)}>Save</Button>
-        <Modal isOpen={modalIsOpen} toggle={toggle} onOpened={handleOpen}>
-          <ModalHeader toggle={toggle}>Save</ModalHeader>
+        <Modal isOpen={modalIsOpen} toggle={toggle}>
+          <ModalHeader toggle={toggle}>
+            <h2>E-Mail-Adresse ändern</h2>
+          </ModalHeader>
           <ModalBody>
-            Name:
-            <Input innerRef={inputRef} />
+            <p>
+              Bitte gib deine neue E-Mail-Adresse zweimal an. Deine alte
+              E-Mail-Adresse wird damit für das Portal ungültig. Bei Angeboten
+              oder Fragen werden wir dich künftig über die neue E-Mail-Adresse
+              kontaktieren. Um wieder alle Funktionen des Portals nutzen zu
+              können, musst du deine neue E-Mail-Adresse bestätigen.
+            </p>
+            <EmailForm />
           </ModalBody>
-          <ModalFooter>
-            <Button>Save</Button>
-            <Button onClick={toggle}>Close</Button>
-          </ModalFooter>
         </Modal>
       </div>
     </div>
