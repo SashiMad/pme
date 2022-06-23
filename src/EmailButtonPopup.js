@@ -1,43 +1,27 @@
 import React from "react";
-import { Button, Popover, PopoverBody } from "reactstrap";
+import { Button, Modal } from "reactstrap";
 import PopupContent from "./PopupContent";
 
 export default class EmailButtonPopup extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
+  constructor() {
+    super();
     this.state = {
-      popoverOpen: false,
+      show: false,
     };
-  }
-
-  toggle() {
-    this.setState({
-      popoverOpen: !this.state.popoverOpen,
-    });
   }
 
   render() {
     return (
       <div>
-        <Button id="Popover1" type="button">
+        <Button>
           <strong>E-MAIL-ADRESSE ÄNDERN</strong>
         </Button>
-        <Popover
-          placement="bottom"
-          isOpen={this.state.popoverOpen}
-          target="Popover1"
-          toggle={this.toggle}
-        >
-          <PopoverBody>
-            <div className="row">
-              <div className="col">
-                <PopupContent />
-              </div>
-            </div>
-          </PopoverBody>
-        </Popover>
+        <Modal show={this.state.show}>
+          <Modal.Header>Modal Header</Modal.Header>
+          <Modal.Body>Modal Body</Modal.Body>
+          <PopupContent />
+          <Modal.Footer>Footer</Modal.Footer>
+        </Modal>
       </div>
     );
   }
