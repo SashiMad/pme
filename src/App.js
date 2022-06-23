@@ -1,5 +1,5 @@
 import "./App.css";
-import DropdownMenu from "./DropdownMenu";
+
 import UserIcon from "./UserIcon";
 import Accordion from "./Accordion";
 
@@ -9,7 +9,6 @@ function App() {
       <header className="background-image"></header>
       <UserIcon />
       <Accordion />
-      <DropdownMenu />
     </div>
   );
 }
