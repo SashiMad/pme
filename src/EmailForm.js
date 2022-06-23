@@ -14,7 +14,7 @@ export default function EmailForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form novalidate="novalidate" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
           <label for="exampleInputEmail1"></label>
           <input
@@ -31,12 +31,13 @@ export default function EmailForm() {
             aria-describedby="emailHelp"
             placeholder="Neue E-Mail-Adresse"
           />
+          <p>{errors.email?.message}</p>
         </div>
         <div className="form-group">
           <label for="exampleInputPassword1"></label>
           <input
             {...register("email", {
-              required: "Bitte neue E-Mail-Adresse wiederholen.",
+              required: "Bitte neue E-Mail-Adresse eingeben.",
               pattern: {
                 value: /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/,
                 message: "Bitte eine valide E-Mail-Adresse eingeben.",
@@ -47,6 +48,7 @@ export default function EmailForm() {
             id="exampleInputEmail"
             placeholder="Neue E-Mail-Adresse wiederholen"
           />
+          <p>{errors.email?.message}</p>
         </div>
         <div>
           <button type="submit" className="btn btn-primary">
