@@ -10,16 +10,23 @@ import {
   faAt,
   faTableList,
 } from "@fortawesome/free-solid-svg-icons";
+import "./Accordion.css";
 
 export default function AccordionDropdown() {
   return (
-    <div>
-      <Accordion flush>
+    <div className="accordion">
+      <Accordion
+        flush
+        style={{ width: "65%", display: "block", margin: "0 auto" }}
+      >
         <Accordion.Item eventKey="0">
           <Accordion.Header>
             <FontAwesomeIcon
+              style={{
+                color: "#007AAD",
+                padding: "0px 10px",
+              }}
               icon={faEnvelope}
-              className="envelope-icon"
             ></FontAwesomeIcon>
             E-Mail-Benachrichtigungen verwalten
           </Accordion.Header>
@@ -35,7 +42,13 @@ export default function AccordionDropdown() {
         </Accordion.Item>
         <Accordion.Item eventKey="1">
           <Accordion.Header>
-            <FontAwesomeIcon icon={faAt} className="at-icon"></FontAwesomeIcon>
+            <FontAwesomeIcon
+              style={{
+                color: "#007AAD",
+                padding: "0px 10px",
+              }}
+              icon={faAt}
+            ></FontAwesomeIcon>
             E-Mail-Adresse ändern
           </Accordion.Header>
           <Accordion.Body>
@@ -48,8 +61,10 @@ export default function AccordionDropdown() {
             </div>
             <div>
               {" "}
-              <p>Deine aktuelle E-Mail-Adresse:</p>{" "}
-              <strong>devet@familienservice.de</strong>
+              <p>
+                Deine aktuelle E-Mail-Adresse:{" "}
+                <strong>devet@familienservice.de</strong>{" "}
+              </p>
             </div>
             <EmailButtonPopup />
           </Accordion.Body>
@@ -57,8 +72,11 @@ export default function AccordionDropdown() {
         <Accordion.Item eventKey="2">
           <Accordion.Header>
             <FontAwesomeIcon
+              style={{
+                color: "#007AAD",
+                padding: "0px 10px",
+              }}
               icon={faLock}
-              className="lock-icon"
             ></FontAwesomeIcon>
             Passwort ändern
           </Accordion.Header>
@@ -75,8 +93,11 @@ export default function AccordionDropdown() {
         <Accordion.Item eventKey="3">
           <Accordion.Header>
             <FontAwesomeIcon
+              style={{
+                color: "#007AAD",
+                padding: "0px 10px",
+              }}
               icon={faTableList}
-              className="list-icon"
             ></FontAwesomeIcon>
             Onlinedarstellung verwalten
           </Accordion.Header>
@@ -93,8 +114,11 @@ export default function AccordionDropdown() {
         <Accordion.Item eventKey="4">
           <Accordion.Header>
             <FontAwesomeIcon
+              style={{
+                color: "#007AAD",
+                padding: "0px 10px",
+              }}
               icon={faCircleXmark}
-              className="xmark-icon"
             ></FontAwesomeIcon>{" "}
             Benutzerkonto löschen
           </Accordion.Header>
