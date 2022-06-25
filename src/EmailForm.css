@@ -8,3 +8,8 @@
   margin-bottom: 15px;
   font-size: 17px;
 }
+
+.save-button:hover {
+  background: #ad325d;
+  border: 1px solid #ad325d;
+}
