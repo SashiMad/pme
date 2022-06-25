@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import EmailForm from "./EmailForm";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function EmailButtonPopup() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -11,7 +10,9 @@ export default function EmailButtonPopup() {
   return (
     <div className="EmailButtonPopup">
       <div>
-        <Button onClick={() => setModalIsOpen(true)}>Save</Button>
+        <Button onClick={() => setModalIsOpen(true)}>
+          <strong>E-MAIL-ADRESSE ÄNDERN</strong>
+        </Button>
         <Modal isOpen={modalIsOpen} toggle={toggle}>
           <ModalHeader toggle={toggle}>
             <h2>E-Mail-Adresse ändern</h2>

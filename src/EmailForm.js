@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import "./EmailForm.css";
 
 export default function EmailForm() {
   const {
@@ -25,6 +26,7 @@ export default function EmailForm() {
                 message: "Bitte eine valide E-Mail-Adresse eingeben.",
               },
             })}
+            name="email"
             type="email"
             className="form-control"
             id="exampleInputEmail1"
@@ -43,6 +45,7 @@ export default function EmailForm() {
                 message: "Bitte eine valide E-Mail-Adresse eingeben.",
               },
             })}
+            name="emailConfirmation"
             type="email"
             className="form-control"
             id="exampleInputEmail"
@@ -51,7 +54,7 @@ export default function EmailForm() {
           <p>{errors.email?.message}</p>
         </div>
         <div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary btn-lg save-button">
             <strong>SPEICHERN</strong>
           </button>
         </div>
