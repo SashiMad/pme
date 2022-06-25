@@ -17,7 +17,11 @@ export default function AccordionDropdown() {
     <div className="accordion">
       <Accordion
         flush
-        style={{ width: "65%", display: "block", margin: "0 auto" }}
+        style={{
+          width: "65%",
+          display: "block",
+          margin: "0 auto",
+        }}
       >
         <Accordion.Item eventKey="0">
           <Accordion.Header>
