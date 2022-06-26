@@ -11,14 +11,17 @@ import {
   faTableList,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Accordion.css";
+import { useWindowSize } from "./useWindowSize";
 
 export default function AccordionDropdown() {
+  const size = useWindowSize();
+
   return (
     <div className="accordion">
       <Accordion
         flush
         style={{
-          width: "65%",
+          width: size.width > 580 ? "65%" : "100%",
           display: "block",
           margin: "0 auto",
         }}

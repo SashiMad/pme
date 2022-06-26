@@ -15,7 +15,9 @@ export default function UserIcon() {
         icon={faSquarePen}
         className="pen-icon"
       ></FontAwesomeIcon>
-      <h3>devel oper</h3>
+      <h3>
+        <strong>devel oper</strong>
+      </h3>
     </div>
   );
 }
