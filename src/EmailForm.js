@@ -56,7 +56,7 @@ export default function EmailForm() {
             {...register("email", {
               required: "Bitte neue E-Mail-Adresse eingeben.",
               pattern: {
-                value: /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/,
+                value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
               },
             })}
             name="email"
@@ -74,7 +74,7 @@ export default function EmailForm() {
             {...register("confirmEmail", {
               required: "Bitte neue E-Mail-Adresse eingeben.",
               pattern: {
-                value: /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/,
+                value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
               },
             })}
             name="confirmEmail"
