@@ -12,7 +12,7 @@ export default function EmailForm() {
       if (!email || !confirmEmail) {
         setToastMessage({
           type: "Error",
-          message: <strong>Bitte neue E-Mail-Adresse eingeben.</strong>,
+          message: <strong>Bitte neue E-Mail-Adresse eingeben</strong>,
         });
         return;
       }
@@ -21,7 +21,7 @@ export default function EmailForm() {
       if (!emailRegex.test(email) || !emailRegex.test(confirmEmail)) {
         setToastMessage({
           type: "Error",
-          message: <strong>Invalid email</strong>,
+          message: <strong>Bitte gültige E-Mail-Adresse eingeben</strong>,
         });
         return
       }
@@ -29,7 +29,7 @@ export default function EmailForm() {
       if (email !== confirmEmail) {
         setToastMessage({
           type: "Error",
-          message: <strong>Emails do not match</strong>,
+          message: <strong>Die E-Mail-Adressen stimmen nicht überein</strong>,
         });
         return
       } 
