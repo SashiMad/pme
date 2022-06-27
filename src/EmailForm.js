@@ -24,13 +24,13 @@ export default function EmailForm() {
       if (!emailsMatch) {
         setToastMessage({
           type: "Error",
-          message: "Emails don't match",
+          message: <strong>Die E-Mail-Adressen müssen übereinstimmen</strong>,
         });
         return;
       } else {
         setToastMessage({
           type: "Success",
-          message: "Submitted",
+          message: <strong>E-Mail-Adresse übermittelt</strong>,
         });
       }
     },
@@ -40,7 +40,7 @@ export default function EmailForm() {
   const onInvalid = useCallback(() => {
     setToastMessage({
       type: "Error",
-      message: "Invalid email",
+      message: <strong>Ungültige E-Mail-Adresse</strong>,
     });
   });
 
@@ -93,7 +93,7 @@ export default function EmailForm() {
         </div>
       </form>
       {toastMessage && (
-        <ToastContainer position="bottom-end" className="p-3">
+        <ToastContainer position="top-center" className="p-3">
           <Toast
             style={
               toastMessage.type === "Error"
