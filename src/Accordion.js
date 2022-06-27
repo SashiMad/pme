@@ -24,6 +24,7 @@ export default function AccordionDropdown() {
           width: size.width > 580 ? "65%" : "100%",
           display: "block",
           margin: "0 auto",
+          
         }}
       >
         <Accordion.Item eventKey="0">

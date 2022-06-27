@@ -1,3 +1,10 @@
 .accordion {
   margin-bottom: 40px;
 }
+
+@media (max-width: 580px) {
+  .accordion {
+    position: relative;
+    top: -65px;
+  }
+}

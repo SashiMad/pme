@@ -5,7 +5,7 @@ import Accordion from "./Accordion";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <header className="background-image"></header>
       <UserIcon />
       <Accordion />
