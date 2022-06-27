@@ -1,97 +1,99 @@
-import React, { useMemo, useState, useCallback } from "react";
-import { useForm } from "react-hook-form";
+import React, { useState, useCallback } from "react";
 import "./EmailForm.css";
 import { Toast, ToastContainer } from "react-bootstrap";
 
 export default function EmailForm() {
-  const {
-    handleSubmit,
-    formState: { errors },
-    register,
-    getValues,
-  } = useForm();
-
   const [toastMessage, setToastMessage] = useState(undefined);
-
-  const values = getValues();
-
-  const emailsMatch = useMemo(() => {
-    return values.email === values.confirmEmail;
-  }, [values]);
+  const [email, setEmail] = useState("")
+  const [confirmEmail, setConfirmEmail] = useState("")
 
   const onSubmit = useCallback(
-    (data) => {
-      if (!emailsMatch) {
+    () => {
+      if (!email || !confirmEmail) {
         setToastMessage({
           type: "Error",
-          message: <strong>Die E-Mail-Adressen müssen übereinstimmen</strong>,
+          message: <strong>Bitte neue E-Mail-Adresse eingeben.</strong>,
         });
         return;
-      } else {
-        setToastMessage({
-          type: "Success",
-          message: <strong>E-Mail-Adresse übermittelt</strong>,
-        });
       }
-    },
-    [emailsMatch]
-  );
+      
+      const emailRegex = new RegExp(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)
+      if (!emailRegex.test(email) || !emailRegex.test(confirmEmail)) {
+        setToastMessage({
+          type: "Error",
+          message: <strong>Invalid email</strong>,
+        });
+        return
+      }
 
-  const onInvalid = useCallback(() => {
-    setToastMessage({
-      type: "Error",
-      message: <strong>Ungültige E-Mail-Adresse</strong>,
-    });
-  });
+      if (email !== confirmEmail) {
+        setToastMessage({
+          type: "Error",
+          message: <strong>Emails do not match</strong>,
+        });
+        return
+      } 
+      
+      setToastMessage({
+        type: "Success",
+        message: <strong>E-Mail-Adresse übermittelt</strong>,
+      });
+    },
+    [email, confirmEmail]
+  );
 
   return (
     <div>
-      <form
+      {/* <form
         novalidate="novalidate"
-        onSubmit={handleSubmit(onSubmit, onInvalid)}
-      >
+        // onSubmit={handleSubmit(onSubmit, onInvalid)}
+      > */}
         <div className="form-group">
           <label for="exampleInputEmail1"></label>
           <input
-            {...register("email", {
-              required: "Bitte neue E-Mail-Adresse eingeben.",
-              pattern: {
-                value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-              },
-            })}
+            // {...register("email", {
+            //   required: "Bitte neue E-Mail-Adresse eingeben.",
+            //   pattern: {
+            //     value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+            //   },
+            // })}
             name="email"
             type="email"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Neue E-Mail-Adresse"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
-          <p>{errors.email?.message}</p>
+          {/* <p>{errors.email?.message}</p> */}
         </div>
         <div className="form-group">
           <label for="exampleInputPassword1"></label>
           <input
-            {...register("confirmEmail", {
-              required: "Bitte neue E-Mail-Adresse eingeben.",
-              pattern: {
-                value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-              },
-            })}
+            // {...register("confirmEmail", {
+            //   required: "Bitte neue E-Mail-Adresse eingeben.",
+            //   pattern:c {
+            //     value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+            //   },
+            // })}
             name="confirmEmail"
             type="email"
             className="form-control"
             id="exampleInputEmail"
             placeholder="Neue E-Mail-Adresse wiederholen"
+            onChange={(e) => setConfirmEmail(e.target.value)}
+            value={confirmEmail}
           />
-          <p>{errors.confirmEmail?.message}</p>
+          {/* <p>{errors.confirmEmail?.message}</p> */}
         </div>
 
         <div>
-          <button type="submit" className="btn btn-primary btn-lg save-button">
+          <button className="btn btn-primary btn-lg save-button" onClick={onSubmit}>
             <strong>SPEICHERN</strong>
           </button>
         </div>
-      </form>
+      {/* </form> */}
       {toastMessage && (
         <ToastContainer position="top-center" className="p-3">
           <Toast
