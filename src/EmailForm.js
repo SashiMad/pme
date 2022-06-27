@@ -24,7 +24,7 @@ export default function EmailForm() {
       if (!emailsMatch) {
         setToastMessage({
           type: "Error",
-          message: "Emails dont match",
+          message: "Emails don't match",
         });
         return;
       } else {
